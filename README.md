@@ -9,6 +9,9 @@ curl -sSL https://raw.githubusercontent.com/xLLMA/OllamaServer/main/install.sh |
 - pull your choose model (library)
 - Running Api Service In Your Server With Public IP
 
+
+## All Library for Ollama
+
 | Model                    | Link                                                |
 |--------------------------|-----------------------------------------------------|
 | alfred                   | https://ollama.com/library/alfred                   |
