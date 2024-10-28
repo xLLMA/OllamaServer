@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git clone https://github.com/xLLMA/OllamaServer.git &&
+cd OllamaServer &&
 python3 pull.py &&
 read -p "Enter the desired OLLAMA repository name (e.g., orca-mini): " repo_name &&
 sudo apt update &&
