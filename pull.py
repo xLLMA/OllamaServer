@@ -26,7 +26,7 @@ class Libs:
             target_links = re.findall(pattern, req.text)
 
             # -- list of unique libraries
-            unique_libs = list(set(target_links))
+            unique_libs = list(sorted(target_links))
             return [(lib.split('/')[-1], f"https://ollama.com{lib}") for lib in unique_libs]
 
         except requests.exceptions.RequestException as e:
