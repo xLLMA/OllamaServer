@@ -26,9 +26,6 @@ else
     echo "Error: repo.txt not found. Exiting..."
     exit 1
 fi
-# Update the system and install required packages
-echo "Updating system and installing necessary packages..."
-sudo apt update -y && sudo apt install nginx curl git -y
 
 # Check if Ollama is installed, if not, install it
 if ! command -v ollama &> /dev/null
