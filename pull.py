@@ -1,7 +1,4 @@
-import requests
-import re
-import subprocess
-import sys
+import requests, re
 
 class Colors:
     RED = '\033[91m'
