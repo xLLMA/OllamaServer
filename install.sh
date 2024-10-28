@@ -7,8 +7,16 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 
-echo "Running pull.py to let user select a repository..."
+# Run pull.py to display available libraries
+echo "Displaying available libraries..."
 python3 pull.py
+
+# Prompt user for library selection
+echo -n "Enter the number of the library you want to select: "
+read selection
+
+# Run pull.py again with the selected number to save repo_name to repo.txt
+python3 pull.py "$selection"
 
 # Check if repo.txt was created and read the repo_name
 if [[ -f "repo.txt" ]]; then
@@ -18,7 +26,6 @@ else
     echo "Error: repo.txt not found. Exiting..."
     exit 1
 fi
-
 # Update the system and install required packages
 echo "Updating system and installing necessary packages..."
 sudo apt update -y && sudo apt install nginx curl git -y
