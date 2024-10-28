@@ -65,5 +65,5 @@ class Libs:
 # ----------------------------------------
 lib = Libs()
 repo_name, repo_url = lib.pull_lib()
-with open("repo.txt", "w") as fs:
+with open("repo.txt", "w+") as fs:
     fs.write(f"{repo_name}")
