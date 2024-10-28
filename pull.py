@@ -3,11 +3,12 @@ import re
 import subprocess
 import sys
 
-try:
-    from colorthon import Colors
-except:
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'colorthon'])
-
+class Colors:
+    RED = '\033[91m'
+    GREEN = '\033[92m'
+    GREY = '\033[90m'
+    CYAN = '\033[96m'
+    RESET = '\033[0m'
 
 class Libs:
     def __init__(self):
