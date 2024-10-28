@@ -1,5 +1,6 @@
 import requests, re
 
+
 class Colors:
     RED = '\033[31m'
     GREEN = '\033[32m'
@@ -7,6 +8,7 @@ class Colors:
     MAGENTA = '\033[35m'
     CYAN = '\033[36m'
     RESET = '\033[0m'
+
 
 class Libs:
     def __init__(self):
@@ -61,9 +63,26 @@ class Libs:
 
         return repo_name, repo_url
 
+    def save_repo_to_file(self, idLib):
+        """Save the selected repo_name to repo.txt."""
+        if idLib in range(1, len(self.all_libs) + 1):
+            
+            repo_name = self.all_libs[idLib - 1][0]
+            repo_url = self.all_libs[idLib - 1][1]
+            with open("repo.txt", "w") as f:
+                f.write(repo_name)
+            print(f"{Colors.CYAN}Library:{Colors.RESET}{Colors.GREEN} {repo_name}{Colors.RESET}"
+                  f"\n{Colors.CYAN}Pulling:{Colors.RESET} {repo_url}")
+        else:
+            print("Invalid selection. Please choose a valid library number.")
 
-# ----------------------------------------
-lib = Libs()
-repo_name, repo_url = lib.pull_lib()
-with open("repo.txt", "w+") as fs:
-    fs.write(f"{repo_name}")
+
+if __name__ == "__main__":
+    import sys
+
+    libs = Libs()
+    libs.display_libraries()
+    if len(sys.argv) > 1 and sys.argv[1].isdigit():
+        selection = int(sys.argv[1])
+        libs.save_repo_to_file(selection)
+
