@@ -1,10 +1,11 @@
 import requests, re
 
 class Colors:
-    RED = '\033[91m'
-    GREEN = '\033[92m'
-    GREY = '\033[90m'
-    CYAN = '\033[96m'
+    RED = '\033[31m'
+    GREEN = '\033[32m'
+    YELLOW = '\033[33m'
+    MAGENTA = '\033[35m'
+    CYAN = '\033[36m'
     RESET = '\033[0m'
 
 class Libs:
